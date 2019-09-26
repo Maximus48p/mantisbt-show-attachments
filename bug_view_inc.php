@@ -677,6 +677,15 @@ if( $t_show_additional_information ) {
 	echo '</tr>';
 }
 
+# Attachments
+if ( ON == config_get('show_attachments') ) {
+	echo '<tr>';
+    echo '<th class="bug-attachments category">', lang_get( 'attached_files' ), '</th>';
+    echo '<td class="bug-attachments" colspan="5">', $t_attachments;
+    print_bug_attachments_list( $t_bug_id );
+    echo '</td></tr>';
+}
+
 # Tagging
 if( $t_show_tags ) {
 	echo '<tr>';
